@@ -38,6 +38,6 @@
 
 ## ライセンス
 
-このプロジェクトは[MIT ライセンス](https://choosealicense.com/licenses/mit/)の下で公開されています。
+このプロジェクトは [LICENSE](LICENSE)の下で公開されています。
 
 コードは自由に使用、修正、配布していただけます。
