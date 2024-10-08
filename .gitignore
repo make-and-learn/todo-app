@@ -1,0 +1,36 @@
+# VSCode関連
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# ローカル設定ファイル
+.env
+
+# システムファイル
+.DS_Store
+Thumbs.db
+
+# ログファイル
+*.log
+
+# 一時ファイル
+*.tmp
+*.temp
+
+# Node.js関連（将来的にNode.jsを使用する場合）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ビルド出力（将来的にビルドプロセスを導入する場合）
+/dist
+/build
+
+# その他
+*.bak
+*.swp
+*~

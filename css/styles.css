@@ -1,0 +1,239 @@
+/* ルート要素に対するカスタムプロパティ（変数）の定義 */
+:root {
+    --primary-color: #5cb85c; /* 主要な色（緑） */
+    --primary-hover-color: #4cae4c; /* 主要な色のホバー時の色 */
+    --secondary-color: #d9534f; /* 二次的な色（赤） */
+    --secondary-hover-color: #c9302c; /* 二次的な色のホバー時の色 */
+    --edit-color: #337ab7; /* 編集ボタンの色（青） */
+    --edit-hover-color: #286090; /* 編集ボタンのホバー時の色 */
+    --background-color: #f4f4f4; /* 背景色（薄いグレー） */
+    --text-color: #333; /* テキストの色（濃いグレー） */
+    --error-color: #d9534f; /* エラーメッセージの色（赤） */
+    --date-button-color: #6c757d; /* 日付ボタンの色（グレー） */
+    --date-button-hover-color: #5a6268; /* 日付ボタンのホバー時の色 */
+}
+
+/* 全ての要素に対するリセットスタイル */
+* {
+    box-sizing: border-box; /* パディングとボーダーを幅と高さに含める */
+    margin: 0; /* 外側の余白をなくす */
+    padding: 0; /* 内側の余白をなくす */
+}
+
+/* ボディ要素のスタイル */
+body {
+    font-family: Arial, sans-serif; /* フォントファミリーの設定 */
+    line-height: 1.6; /* 行の高さを設定 */
+    background-color: var(--background-color); /* 背景色を設定 */
+    color: var(--text-color); /* テキストの色を設定 */
+}
+
+/* コンテナのスタイル */
+.container {
+    width: 90%; /* 幅を90%に設定 */
+    max-width: 500px; /* 最大幅を500pxに制限 */
+    margin: 2rem auto; /* 上下に2rem、左右は自動で中央揃え */
+    padding: 1rem; /* 内側の余白を1remに設定 */
+}
+
+/* 見出し1のスタイル */
+h1 {
+    text-align: center; /* テキストを中央揃えに */
+    margin-bottom: 1rem; /* 下側の余白を1remに設定 */
+}
+
+/* タスクフォームのスタイル */
+#task-form {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 子要素を縦方向に配置 */
+    gap: 0.5rem; /* 子要素間の間隔を0.5remに設定 */
+    margin-bottom: 2rem; /* 下側の余白を2remに設定 */
+}
+
+/* 入力グループのスタイル */
+.input-group {
+    display: flex; /* フレックスボックスを使用 */
+    gap: 0.5rem; /* 子要素間の間隔を0.5remに設定 */
+}
+
+/* タスク入力フィールドのスタイル */
+#task-input {
+    flex-grow: 1; /* 利用可能なスペースを最大限に使用 */
+    padding: 0.5rem; /* 内側の余白を0.5remに設定 */
+    font-size: 1rem; /* フォントサイズを1remに設定 */
+    border: 1px solid #ddd; /* 1pxの実線のボーダーを設定 */
+    border-radius: 4px; /* 角を丸くする */
+}
+
+/* 日付選択ボタンと送信ボタンの共通スタイル */
+#date-select-btn, button[type="submit"] {
+    padding: 0.5rem; /* 内側の余白を0.5remに設定 */
+    font-size: 1rem; /* フォントサイズを1remに設定 */
+    border: none; /* ボーダーをなくす */
+    border-radius: 4px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    transition: background-color 0.3s ease; /* 背景色の変更をアニメーション化 */
+}
+
+/* 日付選択ボタンのスタイル */
+#date-select-btn {
+    background-color: var(--date-button-color); /* 背景色を設定 */
+    color: white; /* テキストの色を白に設定 */
+}
+
+/* 日付選択ボタンのホバー時のスタイル */
+#date-select-btn:hover {
+    background-color: var(--date-button-hover-color); /* ホバー時の背景色を設定 */
+}
+
+/* 送信ボタンのスタイル */
+button[type="submit"] {
+    background-color: var(--primary-color); /* 背景色を設定 */
+    color: white; /* テキストの色を白に設定 */
+}
+
+/* 送信ボタンのホバー時のスタイル */
+button[type="submit"]:hover {
+    background-color: var(--primary-hover-color); /* ホバー時の背景色を設定 */
+}
+
+/* エラーコンテナのスタイル */
+.error-container {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 子要素を縦方向に配置 */
+    gap: 0.25rem; /* 子要素間の間隔を0.25remに設定 */
+}
+
+/* エラーメッセージのスタイル */
+.error-message {
+    color: var(--error-color); /* テキストの色を設定 */
+    font-size: 0.875rem; /* フォントサイズを0.875remに設定 */
+}
+
+/* 選択された日付コンテナのスタイル */
+#selected-date-container {
+    font-size: 0.875rem; /* フォントサイズを0.875remに設定 */
+    color: var(--date-button-color); /* テキストの色を設定 */
+}
+
+/* タスクリストのスタイル */
+#task-list {
+    list-style-type: none; /* リストマーカーを非表示に */
+}
+
+/* タスクアイテムのスタイル */
+.task-item {
+    background-color: #fff; /* 背景色を白に設定 */
+    margin-bottom: 0.5rem; /* 下側の余白を0.5remに設定 */
+    padding: 0.5rem; /* 内側の余白を0.5remに設定 */
+    border-radius: 4px; /* 角を丸くする */
+    display: flex; /* フレックスボックスを使用 */
+    align-items: center; /* 子要素を垂直方向に中央揃え */
+    gap: 0.5rem; /* 子要素間の間隔を0.5remに設定 */
+}
+
+/* 完了済みタスクのテキストスタイル */
+.task-item.completed .task-text {
+    text-decoration: line-through; /* 取り消し線を追加 */
+    opacity: 0.6; /* 透明度を設定 */
+}
+
+/* タスクテキストのスタイル */
+.task-text {
+    flex-grow: 1; /* 利用可能なスペースを最大限に使用 */
+    word-break: break-word; /* 長い単語を折り返す */
+    max-width: calc(100% - 120px); /* 最大幅を設定 */
+    white-space: nowrap; /* テキストを1行に表示 */
+    overflow: hidden; /* はみ出た部分を隠す */
+    text-overflow: ellipsis; /* はみ出た部分を省略記号で表示 */
+}
+
+/* タスクアクションのスタイル */
+.task-actions {
+    display: flex; /* フレックスボックスを使用 */
+    gap: 0.5rem; /* 子要素間の間隔を0.5remに設定 */
+}
+
+/* タスクアクションボタンの共通スタイル */
+.task-actions button {
+    padding: 0.25rem 0.5rem; /* 内側の余白を設定 */
+    color: white; /* テキストの色を白に設定 */
+    border: none; /* ボーダーをなくす */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    font-size: 0.75rem; /* フォントサイズを0.75remに設定 */
+    border-radius: 4px; /* 角を丸くする */
+    transition: background-color 0.3s ease; /* 背景色の変更をアニメーション化 */
+}
+
+/* 編集ボタンのスタイル */
+.edit-btn {
+    background-color: var(--edit-color); /* 背景色を設定 */
+}
+
+/* 編集ボタンのホバー時のスタイル */
+.edit-btn:hover {
+    background-color: var(--edit-hover-color); /* ホバー時の背景色を設定 */
+}
+
+/* 削除ボタンのスタイル */
+.delete-btn {
+    background-color: var(--secondary-color); /* 背景色を設定 */
+}
+
+/* 削除ボタンのホバー時のスタイル */
+.delete-btn:hover {
+    background-color: var(--secondary-hover-color); /* ホバー時の背景色を設定 */
+}
+
+/* カスタムカレンダーのスタイル */
+.custom-calendar {
+    display: none; /* 初期状態では非表示 */
+    position: absolute; /* 絶対位置指定 */
+    background: white; /* 背景色を白に設定 */
+    border: 1px solid #ccc; /* ボーダーを設定 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* ボックスシャドウを追加 */
+    z-index: 1000; /* 重なり順を設定 */
+}
+
+/* カレンダーヘッダーのスタイル */
+.calendar-header {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-between; /* 子要素を両端に配置 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+}
+
+/* カレンダーグリッドのスタイル */
+.calendar-grid {
+    display: grid; /* グリッドレイアウトを使用 */
+    grid-template-columns: repeat(7, 1fr); /* 7列のグリッドを作成 */
+    gap: 5px; /* グリッドアイテム間の間隔を5pxに設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+}
+
+/* カレンダーの日付ヘッダーと日付のスタイル */
+.calendar-day-header, .calendar-day {
+    text-align: center; /* テキストを中央揃えに */
+    padding: 5px; /* 内側の余白を5pxに設定 */
+}
+
+/* カレンダーの日付ヘッダーのスタイル */
+.calendar-day-header {
+    font-weight: bold; /* フォントを太字に */
+}
+
+/* カレンダーの日付のスタイル */
+.calendar-day {
+    cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+/* カレンダーの日付のホバー時のスタイル */
+.calendar-day:hover {
+    background-color: #f0f0f0; /* ホバー時の背景色を設定 */
+}
+
+/* レスポンシブデザイン: 画面幅が600px以下の場合 */
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* コンテナの幅を95%に変更 */
+    }
+}
